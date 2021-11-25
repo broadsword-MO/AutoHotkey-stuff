@@ -1,0 +1,154 @@
+;============= Current hotkey/hotstring scripts =============
+
+;========================================
+;               Hotkeys
+;========================================
+
+;================== CapsLock ===================
+Capslock & P    Opens current or new instance of SMPlayer
+Capslock & O    Opens current or new instance of Obsidian
+Capslock & V    Opens current or new instance of VS Code
+
+
+;================== Ctrl key ===================
+Ctrl + F1   Hibernate Windows
+
+
+;================== Alt key ===================
+Alt + shift + =   Make a primary title line for AHK code
+Alt + =   Make a secondary title line for AHK code
+Alt + F4    (native) Close the active window
+Alt + tab   (native) Shows Task View popup
+
+
+;============= Windows key =============
+Windows Key	  (native) Opens/closes the Start menu.
+Windows key + Tab	(native) Open Task View/Timeline.
+
+;======================== Letters =============================
+Windows Key + A Toggles the active Window to be always on top.
+Windows Key + C Opens current or new instance of Windows 10 Calculator "calc.exe"
+Windows Key + D	(native) Shows/hides open apps on the desktop.
+Windows Key + Control + D (native) Creates another virtual desktop.
+Windows Key + E	(modified from native) Opens current or new instance of Windows 10 File Explorer.
+Windows Key + H Opens AutoHotKey hotstring creator
+Windows Key + N Opens current or new instance of Windows 10 Notepad
+Windows key + R	(native) Open Run command.
+Windows Key + S (or Windows Key + Q) (native) Opens Windows Search.
+Windows key + Shift + S	(native) Create part of the screen screenshot. Uses Windows 10 Snip & Sketch
+Windows Key + X	(native) Opens the secondary (right click) start menu.
+
+;======================== Arrow Keys =============================
+                        (All Native)
+Windows key + Left arrow key	Snap app or window left.
+Windows key + Right arrow key	Snap app or window right.
+Windows Key + Up Arrow	Maximizes the selected window.
+Windows Key + Down Arrow	Reduces the window size. (If maximized, it first restores down, then a second click minimizes.)
+Windows key + Shift + Up arrow key	Stretch desktop window to the top and bottom of the screen.
+Windows key + Shift + Down arrow key	Maximize or minimize active windows vertically while maintaining width.
+Windows key + Shift + Left arrow key	Move active window to monitor on the left.
+Windows key + Shift + Right arrow key	Move active window to monitor on the right.
+Windows Key + Control + Left Arrow	Switches to the virtual desktop on the left.
+Windows Key + Control + Right Arrow	Switches to the virtual desktop on the right.
+
+
+;========================================
+;               Hotstrings
+;========================================
+;=============== YouTube download command ================
+::ytdl::youtube-dl
+
+;================== Email addresses ===================
+::ts1g::thesonseeker1@gmail.com
+::ts1p::thesonseeker1@protonmail.com
+
+;================== Time related ===================
+::/addnow:: ; e.g. "added 12:02PM 9/06/2020"
+::/date:: ; e.g. "5/12/2021"
+::/le::last edited
+::/lenow:: ; e.g. "last edited 11:28AM 5/12/2021"
+::/now:: ; e.g. "11:47AM 5/12/2021"
+::/time:: ; e.g. "2:03PM"
+::/day:: ; e.g. the current day "Wednesday"
+::/yest:: ; e.g. the day before today, "Thursday"
+::/tom:: ; e.g. the day after today, "Saturday"
+::@today:: ; e.g. "2021-11-08, Mon"
+
+
+;=====================================================
+;            Other Native Windows hotkeys
+;=====================================================
+;======================== Letters =============================
+Windows key + A	Opens the Action center (notifications). [Overridden]
+Windows key + B	Set focus on notification area in the taskbar.
+Windows key + Ctrl + Shift + B	Wake up the device when black or a blank screen.
+Windows Key + C	Opens Cortana in listening mode. [Overridden]
+Windows Key + Control + D  Creates another virtual desktop.
+Windows key + Alt + D	Open date and time in the taskbar.
+Windows Key + E	Opens File Explorer. [modified by me, better]
+Windows Key + F	Opens the Feedback hub.
+Windows key + Ctrl + F	Open search for device on domain network.
+Windows Key + Control + F	Opens the Find Computers window.
+Windows Key + G	Opens the Xbox game bar.
+Windows Key + H	Opens the dictation toolbar. [Overridden]
+Windows Key + I	Opens the Windows Settings menu.
+Windows key + J	Set focus on a tip for Windows 10 when applicable.
+Windows key + K	Open Connect settings.
+Windows Key + L	Locks the screen.
+Windows key + L	Locks computer.
+Windows Key + M	Minimizes all open windows.
+Windows Key + Shift + M	Opens minimized windows. (Doesn't seem to always work right.)
+Windows key + Shift + M	Restore minimized windows on the desktop.
+Windows key + O	Lock device orientation.
+Windows Key + P	Opens the projection settings.
+Windows key + Ctrl + Q	Open Quick Assist.
+Windows key + R	Open Run command.
+Windows Key + S (or Windows Key + Q)  Opens Windows Search.
+Windows key + Shift + S	Create part of the screen screenshot.
+Windows key + T	Cycle through apps in the taskbar.
+Windows Key + U	Opens Ease of Access in the Settings menu.
+Windows Key + V	Opens Clipboard History.
+Windows key + Shift + V	Cycle through notifications..
+Windows key + W	Open the Windows Ink Workspace.
+Windows Key + X	Opens the secondary start menu.
+Windows key + X	Open Quick Link menu.
+Windows key + Y	Change input between desktop and Mixed Reality. (incorrect?)
+Windows key + Z	Switch input between the desktop experience and Windows Mixed Reality.
+
+
+;======================== Numbers =============================
+Windows key + Number (0-9)	Open app in number position in the taskbar.
+Windows Key + <number>	Opens the app in the taskbar relative to the number input. For example, if Slack is the fourth app on the taskbar, using Windows Key + 4 will open Slack.
+
+Windows key + Shift + Number (0-9)	Open another instance of the app in number position in the taskbar.
+Windows key + Ctrl + Number (0-9)	Switch to last active window of the app in number position in the taskbar.
+
+Windows key + Alt + Number (0-9)	Open Jump List of the app in number position in the taskbar.
+Windows Key + Alt + <number>	Opens the right-click menu for the app in the taskbar relative to the number input. For example, if Slack is the fourth app on the taskbar, using Windows Key + Alt + 4 will open Slack’s right-click menu.
+
+Windows key + Ctrl + Shift + Number (0-9)	Open another instance as an administrator of the app in number position in the taskbar.
+
+
+;======================== Function keys =============================
+Windows Key + Control + F4	Closes the active virtual desktop.
+
+
+
+;======================== Symbols/Assort. =============================
+Windows Key + Print Screen	Takes a screenshot of the desktop.
+Windows key + PrtScn	Capture full screenshot in the "Screenshots" folder.
+Windows Key + . (Windows Key + ;)	Opens the emoji/kaomoji/symbols panel.
+Windows key + Period (.) or semicolon (;)	Open emoji panel.
+Windows Key + Space	Switches between installed languages (for writing text).
+Windows key + Spacebar	Change keyboard layout and input language.
+Windows key + Ctrl + Enter	Open Narrator.
+Windows key + Plus (+)	Zoom in using the magnifier.
+Windows key + Minus (-)	Zoom out using the magnifier.
+Windows key + Esc	Exit magnifier.
+Windows key + Forward-slash (/)	Start IME reconversion.
+Windows key + Comma (,)	Temporarily peek at the desktop.
+Windows key + Home	Minimize or maximize all but the active desktop window.
+Windows key + Ctrl + Spacebar	Change previous selected input option.
+Windows key + Pause	(aka: Windows + Fn + Insert) Show System Properties dialog box.
+
+
