@@ -56,7 +56,7 @@ Return
     Send, %Result%
 Return
 
-; Still needed... ::(next week, last week, etc.)::
+; Still needed... ::(yesterday's date, next week, last week, etc.)::
 
 ;============= some various attempts on time ==============
 
@@ -130,8 +130,7 @@ Return
 
 ;================== For Obsidian ===================
 
-::@today:: ; e.g. "2021-11-08, Mon"
+::@today:: ; e.g. "[[2021-11-08, Mon]]"
     FormatTime, Today,,yyyy-MM-dd, ddd
-    Send, %Today%
+    Send, [[%Today%]]
 Return
-
