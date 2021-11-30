@@ -113,6 +113,12 @@ SetCapslockState, AlwaysOff
             MinActRun("Window Spy", "C:\Program Files\AutoHotkey\WindowSpy.ahk")
         Return
 
+        ;================== Kanban plugin setup for Obsidian notes ===================
+        ::kan::
+            if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
+                Send, ---`rkanban-plugin: basic`r---`r
+        Return
+
         ;================== Email addresses ===================
         ::ts1g::thesonseeker1@gmail.com
         ::ts1p::thesonseeker1@protonmail.com
