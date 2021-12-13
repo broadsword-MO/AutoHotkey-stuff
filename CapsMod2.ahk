@@ -1,4 +1,4 @@
-#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn ; Enable warnings to assist with detecting common errors.
 #SingleInstance, Force
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
@@ -27,7 +27,7 @@ SetCapslockState, AlwaysOff
 ;===================================================
 
 ;================== Suspend the script with the Pause button ===================
-~Pause::Suspend ; Suspend this script with the Pause key. With the ~ in front of Pause then "When the hotkey fires, its key's native function will not be blocked (hidden from the system)" so that the hotkey is still received by all other scripts that use it as well.
+~Pause::Pause ; Pause this script with the Pause key. With the ~ in front of Pause then "When the hotkey fires, its key's native function will not be blocked (hidden from the system)" so that the hotkey is still received by all other scripts that use it as well.
 
 ;===================================================
 ;            Some hotkeys that use Ctrl
@@ -113,15 +113,19 @@ SetCapslockState, AlwaysOff
             MinActRun("Window Spy", "C:\Program Files\AutoHotkey\WindowSpy.ahk")
         Return
 
-        ;================== Kanban plugin setup for Obsidian notes ===================
-        ::kan::
-            if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
-                Send, ---`rkanban-plugin: basic`r---`r
-        Return
-
         ;================== Email addresses ===================
         ::ts1g::thesonseeker1@gmail.com
         ::ts1p::thesonseeker1@protonmail.com
+
+        ;================== for Obsidian notes ===================
+        ::kan:: ; Makes a basic, projects type, kanban board
+            if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
+                Send, ---`rkanban-plugin: basic`r---`r{#}{#} Ideas 💡`r`r`r{#}{#} Todo ↘`r`r`r{#}{#} Doing 🛠`r`r`r{#}{#} Done 🛏`r`r`r**Complete**`r
+        Return
+
+        ;================== Some hotstrings for writing JavaScript ===================
+        :o:csl::console.log(){Left} ; console.log(|)
+        ::jvs::JavaScript
 
         ;================== YouTube download command ===================
         ::ytdl::youtube-dl
