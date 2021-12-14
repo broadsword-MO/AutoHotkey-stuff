@@ -98,8 +98,19 @@ SetCapslockState, AlwaysOff
         ;========== Run File Explorer (modified from native), Windows key E ===========
         #e::MinActRun("ahk_class CabinetWClass", "explorer.exe")
 
-        ;========== Run Windows 10 Notepad,     Windows key N ===========
+        ;========== Run Windows 10 Notepad, Windows key N ===========
         #n::MinActRun("Notepad ahk_exe Notepad.exe", "notepad.exe")
+
+        ;================== Windows key cheat sheet toggle, Windows key W ===================
+        #w::
+            Toggle := !Toggle
+            if Toggle {
+                Gui, Add, Picture, x0 y0 w%A_ScreenWidth% h%A_ScreenHeight% , %A_MyDocuments%\shortcutcheatsheet.png
+                Gui, Show, Maximize, Windows shortcut cheat sheet
+            } else if !Toggle {
+                Gui, hide
+            }
+        Return
 
         ;================== Suspend all hotkeys, Windows key End ===================
         ; #End:: Suspend ; Doesn't suspend all for some reason... only its own script
