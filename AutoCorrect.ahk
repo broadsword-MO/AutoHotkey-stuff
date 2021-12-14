@@ -5390,6 +5390,7 @@ return ; This makes the above hotstrings do nothing so that they override the ig
     ::hipocrite::hypocrite
     ::kernal::kernel
     ::licence::license
+    ::mayve::maybe
     ::medevil::medieval
     ::mideval::medieval
     ::midevil::medieval
@@ -5405,12 +5406,17 @@ return ; This makes the above hotstrings do nothing so that they override the ig
     ; :*:  ::. ` ; 2 spaces give a period and a space
     ; :b0:   ::   ` ; 3 spaces gives 3 spaces
 
-    ;================== Some VS Code exceptions ===================
-    ; last edited 12:36PM Nov 20, 2021
+    ;================== Some coding exceptions ===================
+    ; last edited 11:03AM Dec 03, 2021
     #IfWinNotActive Visual Studio Code ahk_exe Code.exe
+        ; if WinActive(, , "Visual Studio Code ahk_exe Code.exe") or WinActive(, , "freecodecamp.org ahk_exe msedge.exe")
         :c:i::I ; Capitalize the word I. 
         :c:css::CSS
         :c:javascript::JavaScript
+    #IfWinNotActive
+    ; #IfWinNotActive freeCodeCamp ahk_exe msedge.exe
+    ;     :c:i::I ; Capitalize the word I. 
+    ;     :c:css::CSS
+    ;     :c:javascript::JavaScript
+    ; #IfWinNotActive
 
-
-::mayve::maybe
