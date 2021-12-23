@@ -5,6 +5,8 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 SetTitleMatchMode, 2
 #SingleInstance, Force
 
+; Inspired by and slightly modified from Juho-Lee.com YouTube video
+
 ~Pause::Pause
 
 #!n:: ; Improved UX for the old Windows Snipping Tool
