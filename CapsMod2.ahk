@@ -17,7 +17,7 @@ SetNumlockState, AlwaysOn
 SetCapslockState, AlwaysOff
 
 ; Set the CapsLock key to only work as CapsLock when also pressed with Alt
-!CapsLock:: CapsLock
+!CapsLock:: CapsLock ; Turn CapsLock on/off, toggle
 ; IMPORTANT... Single-line hotkey remapping commands MUST use the same modifier key for it to work. Otherwise, use "Send," and "Return" on multiple lines.
 
 ; "Return" unnecessary at the end of this script. Each complete single line command has a "Return" at the end implicitly
@@ -27,21 +27,34 @@ SetCapslockState, AlwaysOff
 ;===================================================
 
 ;================== Suspend the script with the Pause button ===================
-~Pause::Pause ; Pause this script with the Pause key. With the ~ in front of Pause then "When the hotkey fires, its key's native function will not be blocked (hidden from the system)" so that the hotkey is still received by all other scripts that use it as well.
+~Pause::Pause ; Pause this script with the Pause key.
+; With the ~ in front of Pause then "When the hotkey fires, its key's native function will not be blocked (hidden from the system)" so that the hotkey is still received by all other scripts that use it as well.
 
 ;===================================================
 ;            Some hotkeys that use Ctrl
 ;===================================================
 
 ;================== Hibernate Windows 10 (Ctrl F1) ===================
-^F1::DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+^F1:: ; Hibernate Windows 10
+    DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+Return
+
+;================== Browser Controls ===================
+; #IfWinActive, ahk_exe msedge.exe ; Exclude Edge browser, optional
+~^Left::Browser_Back ; Browser_Back
+~^Right::Browser_Forward ; Browser_Forward
+~^Down::Browser_Search ; Browser_Search
+~^Up:: ; Browser_Favorites
+    Send, ^+o
+Return
+; #IfWinActive
 
 ;===================================================
 ;            Some hotkeys that use Alt
 ;===================================================
 
 ;================== Make a primary title line for AHK (Alt shift =) ===================
-!+=::
+!+=:: ; Make a primary title line for AHK
     ; ("WinTitle and/or optional- ahk_exe ahk_class ahk_pid", , , )
     if WinActive("Visual Studio Code ahk_exe Code.exe")
         or if WinActive("Notepad")
@@ -51,7 +64,7 @@ SetCapslockState, AlwaysOff
         ;================== Make a secondary title line for AHK (Alt =) ===================
 
         ;           Works, but a bit overdone and a good exercise all the same
-        !=::
+        !=:: ; Make a secondary title line for AHK
             if WinActive("Visual Studio Code ahk_exe Code.exe") ; If VS Code is active
                 or if WinActive("Notepad") ; or if Notepad is active
                 ClipSaved:= ClipboardAll ; Temporarily save the Clipboard contents elsewhere
@@ -71,38 +84,52 @@ SetCapslockState, AlwaysOff
         ;         Some hotkeys that use CapsLock
         ;==================================================
 
-        ;================ Run SMPlayer, CapsLock p =================
-        ; last edited 8:33PM Nov 24, 2021
-        CapsLock & p::MinActRun("SMPlayer ahk_exe smplayer.exe", "C:\Program Files\SMPlayer\smplayer.exe")
-
         ;========== Run Obsidian, CapsLock o ===========
         ; last edited 3:05PM 5/12/2021
-        CapsLock & o::MinActRun("brain - Obsidian ahk_exe Obsidian.exe", "C:\Users\dell\AppData\Local\Obsidian\Obsidian.exe")
+        CapsLock & o:: ; MinActRun Obsidian
+            MinActRun("brain - Obsidian ahk_exe Obsidian.exe", "C:\Users\dell\AppData\Local\Obsidian\Obsidian.exe")
+        Return
 
-        ;========== Run VS Code,    CapsLock v ===========
+        ;================ Run SMPlayer, CapsLock p =================
+        ; last edited 8:33PM Nov 24, 2021
+        CapsLock & p:: ; MinActRun SMPlayer
+            MinActRun("SMPlayer ahk_exe smplayer.exe", "C:\Program Files\SMPlayer\smplayer.exe")
+        return
+
+        ;========== Run VS Code,  CapsLock v ===========
         ; last edited 11:12AM 6/07/2021
-        CapsLock & v::MinActRun("Visual Studio Code ahk_exe Code.exe", "C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+        CapsLock & v:: ; MinActRun VS Code
+            MinActRun("Visual Studio Code ahk_exe Code.exe", "C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+        Return
 
         ;==================================================
         ;      Some hotkeys that use the Windows key
         ;==================================================
 
         ;================== Set active Window Always on Top, Windows key A ===================
-        #a::Winset, Alwaysontop, , A ; Toggles the active Window to be always on top
+        #a:: ; Set active Window Always on Top, toggle
+            Winset, Alwaysontop, , A ; Toggles the active Window to be always on top
+        Return
 
         ;========== Run Windows 10 Calculator,  Windows key C ===========
-        #c::MinActRun("Calculator", "calc.exe") ; Quote marks still necessary around the Windows native application file when in this function
+        #c:: ; MinActRun Windows 10 Calculator
+            MinActRun("Calculator", "calc.exe") ; Quote marks still necessary around the Windows native application file when in this function
+        Return
 
         ;========== Show desktop - toggle (native), Windows key D ===========
 
         ;========== Run File Explorer (modified from native), Windows key E ===========
-        #e::MinActRun("ahk_class CabinetWClass", "explorer.exe")
+        #e:: ; MinActRun File Explorer
+            MinActRun("ahk_class CabinetWClass", "explorer.exe")
+        Return
 
         ;========== Run Windows 10 Notepad, Windows key N ===========
-        #n::MinActRun("Notepad ahk_exe Notepad.exe", "notepad.exe")
+        #n:: ; MinActRun Windows 10 Notepad
+            MinActRun("Notepad ahk_exe Notepad.exe", "notepad.exe")
+        Return
 
         ;================== Windows key cheat sheet toggle, Windows key W ===================
-        #w::
+        #w:: ; Windows key cheat sheet, toggle
             Toggle := !Toggle
             if Toggle {
                 Gui, Add, Picture, x0 y0 w%A_ScreenWidth% h%A_ScreenHeight% , %A_MyDocuments%\shortcutcheatsheet.png
@@ -120,36 +147,36 @@ SetCapslockState, AlwaysOff
         ;===================================================
 
         ;================== Some AHK commands ===================
-        ::ws:: ; Run Window Spy
+        ::ws:: ; Run AHK Window Spy
             MinActRun("Window Spy", "C:\Program Files\AutoHotkey\WindowSpy.ahk")
         Return
 
-        ;================== Email addresses ===================
+        ;================== Email addresses =================== 
         ::ts1g::thesonseeker1@gmail.com
         ::ts1p::thesonseeker1@protonmail.com
 
         ;================== for Obsidian notes ===================
-        ::kan:: ; Makes a basic, projects type, kanban board
+        ::kan:: ; Obsidian - Makes a basic, projects type, kanban board
             if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
                 Send, ---`rkanban-plugin: basic`r---`r{#}{#} Ideas 💡`r`r`r{#}{#} Todo ↘`r`r`r{#}{#} Doing 🛠`r`r`r{#}{#} Done 🛏`r`r`r**Complete**`r
         Return
 
         ;================== Some hotstrings for writing JavaScript ===================
-        :o:csl::console.log(){Left} ; console.log(|)
-        ::jvs::JavaScript
+        :o:csl::console.log(){;}{Left 2} ; console.log(|); 
+            ::jvs::JavaScript
 
-        ;================== YouTube download command ===================
-        ::ytdl::youtube-dl
+            ;================== YouTube download command ===================
+            ::ytdl::youtube-dl
 
-        ;===================================================
-        ;            MinActRun function
-        ;===================================================
-        MinActRun(title, exe) {
-            If WinActive(title)
-                WinMinimize
-            Else If WinExist(title)
-                WinActivate
-            Else
-                Run, %exe%
-        }
+            ;===================================================
+            ;            MinActRun function
+            ;===================================================
+            MinActRun(title, exe) {
+                If WinActive(title)
+                    WinMinimize
+                Else If WinExist(title)
+                    WinActivate
+                Else
+                    Run, %exe%
+            }
 

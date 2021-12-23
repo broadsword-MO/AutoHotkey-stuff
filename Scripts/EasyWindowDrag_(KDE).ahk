@@ -1,4 +1,4 @@
-﻿~Pause::Suspend ; Suspend this script with the Pause key
+﻿~Pause::Pause ; Pause this script with the Pause key
 
 ; Doesn't seem very reliable
 

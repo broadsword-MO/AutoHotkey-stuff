@@ -36,6 +36,7 @@ Windows Key + N Opens current or new instance of Windows 10 Notepad
 Windows key + R	(native) Open Run command.
 Windows Key + S (or Windows Key + Q) (native) Opens Windows Search.
 Windows key + Shift + S	(native) Create part of the screen screenshot. Uses Windows 10 Snip & Sketch
+Windows key + W Cheat sheet for the Windows key hotkeys
 Windows Key + X	(native) Opens the secondary (right click) start menu.
 
 ;======================== Arrow Keys =============================
@@ -55,24 +56,34 @@ Windows Key + Control + Right Arrow	Switches to the virtual desktop on the right
 ;========================================
 ;               Hotstrings
 ;========================================
-;=============== YouTube download command ================
-::ytdl::youtube-dl
+;================== Some AHK commands ===================
+::ws:: ; Run Window Spy
 
 ;================== Email addresses ===================
 ::ts1g::thesonseeker1@gmail.com
 ::ts1p::thesonseeker1@protonmail.com
 
+;================== for writing JavaScript ===================
+:o:csl::console.log(){Left} ; console.log(|)
+::jvs::JavaScript
+
+;================== for Obsidian notes ===================
+::kan:: ; Makes a basic, projects type, kanban board
+::@today:: ; e.g. "[[2021-11-08, Mon]]"
+
 ;================== Time related ===================
-::/addnow:: ; e.g. "added 12:02PM 9/06/2020"
-::/date:: ; e.g. "5/12/2021"
+::/addnow:: ; e.g. "added 8:44PM Nov 18, 2021" ; last edited 8:48PM Nov 18, 2021
+::/date:: ; e.g. "Nov 18, 2021" ; last edited 8:48PM Nov 18, 2021
 ::/le::last edited
-::/lenow:: ; e.g. "last edited 11:28AM 5/12/2021"
-::/now:: ; e.g. "11:47AM 5/12/2021"
+::/lenow:: ; e.g. "last edited 8:47PM Nov 18, 2021" ; last edited 8:48PM Nov 18, 2021
+::/now:: ; e.g. "8:47PM Nov 18, 2021" ; last edited 8:48PM Nov 18, 2021
 ::/time:: ; e.g. "2:03PM"
 ::/day:: ; e.g. the current day "Wednesday"
 ::/yest:: ; e.g. the day before today, "Thursday"
 ::/tom:: ; e.g. the day after today, "Saturday"
-::@today:: ; e.g. "2021-11-08, Mon"
+
+;=============== YouTube download command ================
+::ytdl::youtube-dl
 
 
 ;=====================================================

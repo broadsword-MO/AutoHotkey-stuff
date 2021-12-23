@@ -2,7 +2,7 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-~Pause::Suspend
+~Pause::Pause
 
 ; +a::Toggle := !Toggle
 ; If (!Toggle)
@@ -42,7 +42,7 @@ f8::
     while Toggle {
         ;Click ; Send a mouse click and ...
         Send a ; Send the letter "a"
-        Sleep, 10 ; Wait 10 milliseconds before repeating each time. (There are 1000 ms in one second)
+        Sleep, 1000 ; Wait 10 milliseconds before repeating each time. (There are 1000 ms in one second)
     }
 Return
 
