@@ -7,7 +7,7 @@ SetTitleMatchMode, 2
 
 ; Inspired by and slightly modified from Juho-Lee.com YouTube video
 
-~Pause::Pause
+~Pause::Pause ; Pause this script with the Pause key.
 
 #!n:: ; Improved UX for the old Windows Snipping Tool
     IfWinExist, Snipping Tool ; If it exists,
