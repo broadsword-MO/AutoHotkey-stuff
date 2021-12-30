@@ -1,9 +1,12 @@
 ;============= Other hotkeys/hotstrings to make =============
 
-For.........
+Comments markings variation for VS Code with Alt =
+
 
 ;================== A hotkey to move a window to another Virtual Desktop ===================
 A possibility from pukkandan on Reddit.com is: hide the window (WinHide ?), move to next desktop by sending #^{right} and then unhide the window. But doesn't work on the modern native Windows apps?
+
+Or, using MoveToDesktop.exe
 
 
 ;================== A universal Suspend key for all AHK hotkeys ===================
@@ -18,14 +21,4 @@ A possibility from pukkandan on Reddit.com is: hide the window (WinHide ?), move
 ;                      Scripts
 ;===================================================
 
-;================== Startup programs.ahk ===================
-; this will control the loading time of scripts for windows startup
-; to be put in C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-sleep 30000
-run, CapsMod2
-sleep 30000 ; maybe use WinWait instead
-run, autocorrect
-sleep, 30000
-run, time
-sleep, 30000
-?run, EasyWindowsDrag?
+
