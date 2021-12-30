@@ -129,6 +129,7 @@ Return
         Return
 
         ;================== Windows key cheat sheet toggle, Windows key W ===================
+        ; Add a #NoWarn for this somehow
         #w:: ; Windows key cheat sheet, toggle
             Toggle := !Toggle
             if Toggle {
