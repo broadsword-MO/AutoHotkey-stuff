@@ -5383,7 +5383,7 @@ return ; This makes the above hotstrings do nothing so that they override the ig
     ::comraderie::camaraderie 
     :*?:cieve::ceive ; For deceive, conceived, receive, etc.
     ::consciencious::conscientious
-    ::daquiri::daiquiri recei
+    ::daquiri::daiquiri
     ::facinating::fascinating
     ::fro::for
         ::hwo::how
