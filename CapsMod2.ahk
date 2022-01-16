@@ -37,7 +37,7 @@ SetCapslockState, AlwaysOff
 ;================== Hibernate Windows 10 (Ctrl F1) ===================
 ^F1:: ; Hibernate Windows 10
     DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0) ; Win10 hibernate
-    Sleep, 120000 ; Sleep 2 minutes
+    Sleep, 180000 ; Sleep 3 minutes
     Run, "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\StartupPrograms.ahk - Shortcut.lnk"
 Return
 
