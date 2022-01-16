@@ -22,4 +22,4 @@ Sleep, TenSeconds
 ; What's next?
 
 ~Pause::Pause ; Pause this script with the Pause key.
-; ExitApp ; Doesn't work, apperently the interior scripts loose admin privileges
+; ExitApp ; Doesn't work good, apperently causes interior scripts to loose admin privileges
