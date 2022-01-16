@@ -36,11 +36,13 @@ SetCapslockState, AlwaysOff
 
 ;================== Hibernate Windows 10 (Ctrl F1) ===================
 ^F1:: ; Hibernate Windows 10
-    DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+    DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0) ; Win10 hibernate
+    Sleep, 120000 ; Sleep 2 minutes
+    Run, "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\StartupPrograms.ahk - Shortcut.lnk"
 Return
 
 ;================== Browser Controls ===================
-; #IfWinActive, ahk_exe msedge.exe ; Exclude Edge browser, optional
+; #IfWinActive, ahk_exe msedge.exe ; Exclusive to Edge browser, optional
 ~^Left::Browser_Back ; Browser_Back
 ~^Right::Browser_Forward ; Browser_Forward
 ~^Down::Browser_Search ; Browser_Search
@@ -61,30 +63,33 @@ Return
     Send, {;}==================================================={enter}{;}{enter}{;}==================================================={up 1}{space 12}
         Return
 
-        ;================== Make a secondary title line for AHK (Alt =) ===================
-
-        ;           Works, but a bit overdone and a good exercise all the same
-        !=:: ; Make a secondary title line for AHK
-            if WinActive("Visual Studio Code ahk_exe Code.exe") ; If VS Code is active
-                or if WinActive("Notepad") ; or if Notepad is active
-                ClipSaved:= ClipboardAll ; Temporarily save the Clipboard contents elsewhere
-            Sleep, 50 ; Wait 50 milliseconds
-            Clipboard:= "" ; Empty the Clipboard so ClipWait can detect when some data arrives
-            Clipboard:= ";==================  ===================" ; Put this on the Clipboard
-            ClipWait ; Wait until the clipboard contains data
-            Send, ^v ; Ctrl V = Paste the Clipboard contents into active window
-            Sleep, 50 ; Wait 50 milliseconds
-            Send, {left 20} ; Move the cursor left 20 spaces
-            Sleep, 50 ; Wait 50 milliseconds
-            Clipboard:= ClipSaved ; Restore the previous Clipboard contents
-            ClipSaved:= "" ; Clears the ClipSaved cache to free up memory
+        ;================== Make a secondary comment line for coding, Alt = ===================
+        !=:: ; Make a secondary comment line for code
+            if WinActive("Visual Studio Code ahk_exe Code.exe")
+                or if WinActive("Notepad")
+                Send, ^/
+            Send, =================={Space 2}==================={left 20}
         Return
 
         ;==================================================
         ;         Some hotkeys that use CapsLock
         ;==================================================
 
-        ;========== Run Obsidian, CapsLock o ===========
+        ;================== Run/cycle MS Edge browser windows group, CapsLock e ===================
+        ; added 11:06AM Jan 07, 2022
+        CapsLock & e::
+            GroupAdd, EdgeGroup, Microsoft​ Edge ahk_exe msedge.exe
+            If WinActive("Microsoft​ Edge ahk_exe msedge.exe") {
+                GroupActivate, EdgeGroup, R
+                Sleep, 200
+                WinMinimize
+            } Else if WinExist("Microsoft​ Edge ahk_exe msedge.exe")
+            GroupActivate, EdgeGroup
+            Else
+                Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+        Return
+
+        ;================== Run Obsidian, CapsLock o ===================
         ; last edited 3:05PM 5/12/2021
         CapsLock & o:: ; MinActRun Obsidian
             MinActRun("brain - Obsidian ahk_exe Obsidian.exe", "C:\Users\dell\AppData\Local\Obsidian\Obsidian.exe")
