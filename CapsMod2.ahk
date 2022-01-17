@@ -35,7 +35,7 @@ SetCapslockState, AlwaysOff
 ;===================================================
 
 ;================== Hibernate Windows 10 (Ctrl F1) ===================
-^F1:: ; Hibernate Windows 10
+^F1:: ; Hibernate Windows 10 ; last edited 5:51PM Jan 16, 2022
     DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0) ; Win10 hibernate
     Sleep, 180000 ; Sleep 3 minutes
     Run, "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\StartupPrograms.ahk - Shortcut.lnk"

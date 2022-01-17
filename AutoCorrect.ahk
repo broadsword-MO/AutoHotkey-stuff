@@ -5373,6 +5373,7 @@ return ; This makes the above hotstrings do nothing so that they override the ig
     ::whos::who's
     ::youd::you'd
 
+; ================== Others ===================
     ::alot::a lot
     ::acknowledgement::acknowledgment
     ::artic::arctic
@@ -5386,7 +5387,7 @@ return ; This makes the above hotstrings do nothing so that they override the ig
     ::daquiri::daiquiri
     ::facinating::fascinating
     ::fro::for
-        ::hwo::how
+    ::hwo::how
     ::hipocrite::hypocrite
     ::kernal::kernel
     ::licence::license

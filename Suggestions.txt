@@ -1,10 +1,10 @@
-;============= Other hotkeys/hotstrings to make =============
+;============= Hotkeys/hotstrings to make =============
 
-Comments markings variation for VS Code with Alt =
+Hotkey to pull up AHK help window
 
 
 ;================== A hotkey to move a window to another Virtual Desktop ===================
-A possibility from pukkandan on Reddit.com is: hide the window (WinHide ?), move to next desktop by sending #^{right} and then unhide the window. But doesn't work on the modern native Windows apps?
+A possibility from pukkandan on Reddit.com is: hide the window (WinHide ?), move to next desktop by sending #^{right} and then unhide the window. But doesn't work consistently.
 
 Or, using MoveToDesktop.exe
 
@@ -21,4 +21,9 @@ Or, using MoveToDesktop.exe
 ;                      Scripts
 ;===================================================
 
+Setup MultiLineTT script for quick launching of various programs
+
+StartupPrograms.ahk -
+; Need to change this to run on each login/wakeup, not just startup
+; Need to consider what other programs to add
 
