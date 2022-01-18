@@ -98,8 +98,9 @@ return
 
 ;================== Mine ===================
 ; added 8:40PM Dec 17, 2021
-Esc:: ; to close, instead of the standard Alt F4
-RButton::
+;  Or maybe a toggle switch
+Esc:: ; to close, 
+RButton:: ; or this, instead of the standard Alt F4
     WinClose, ahk_class Notepad
 #IfWinActive
 
@@ -158,5 +159,3 @@ Label_Loop:
         return
     }
 
-    ;================== Mine ===================
-    ; RControl::!F4 ; need something to close the notepad easily... Not this! Maybe a toggle switch
