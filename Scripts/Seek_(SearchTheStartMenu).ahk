@@ -2,6 +2,7 @@
 ; 04/21/2021
 ; Good script, but now unnecessary.
 ; The native Windows Search app (#s (Win s) hotkey) fills the same function.
+; As do various other launcher apps such as Flow Launcher, Listary, etc.
 ;=========================================================================================
 
 ; Seek -- by Phi
