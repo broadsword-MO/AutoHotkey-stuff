@@ -6,7 +6,7 @@ Hotkey to pull up AHK help window
 ;================== A hotkey to move a window to another Virtual Desktop ===================
 A possibility from pukkandan on Reddit.com is: hide the window (WinHide ?), move to next desktop by sending #^{right} and then unhide the window. But doesn't work consistently.
 
-Or, using MoveToDesktop.exe
+Using MoveToDesktop.exe, reliable so far
 
 
 ;================== A universal Suspend key for all AHK hotkeys ===================
@@ -25,5 +25,6 @@ Setup MultiLineTT script for quick launching of various programs
 
 StartupPrograms.ahk -
 ; Need to change this to run on each login/wakeup, not just startup
+; Maybe need to refresh every 2 hours?
 ; Need to consider what other programs to add
 
