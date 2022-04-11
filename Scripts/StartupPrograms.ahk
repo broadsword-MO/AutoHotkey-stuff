@@ -22,4 +22,5 @@ Sleep, TenSeconds
 ; What's next?
 
 ~Pause::Pause ; Pause this script with the Pause key.
+^F12::Reload
 ; ExitApp ; Doesn't work good, apperently causes interior scripts to loose admin privileges
