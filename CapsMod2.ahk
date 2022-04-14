@@ -37,7 +37,7 @@ SetCapslockState, AlwaysOff
 ;================== Hibernate Windows 10 (Ctrl F1) ===================
 ^F1:: ; Hibernate Windows 10 ; last edited 5:51PM Jan 16, 2022
     DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0) ; Win10 hibernate
-    Sleep, 180000 ; Sleep 3 minutes
+    Sleep, 120000 ; Sleep 2 minutes
     Run, "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\StartupPrograms.ahk - Shortcut.lnk"
 Return
 
@@ -47,7 +47,7 @@ Return
 ~^Right::Browser_Forward ; Browser_Forward
 ~^Down::Browser_Search ; Browser_Search
 ~^Up:: ; Browser_Favorites
-    Send, ^+o
+    Send, ^+o ; Send ctrl shift o, the shortcut for Edge favorites
 Return
 ; #IfWinActive
 
@@ -134,7 +134,7 @@ Return
         Return
 
         ;================== Windows key cheat sheet toggle, Windows key W ===================
-        ; Add a #NoWarn for this somehow
+        ; Add a "No #Warn" for this somehow
         #w:: ; Windows key cheat sheet, toggle
             Toggle := !Toggle
             if Toggle {
@@ -168,21 +168,22 @@ Return
         Return
 
         ;================== Some hotstrings for writing JavaScript ===================
-        :o:csl::console.log(){;}{Left 2} ; console.log(|); 
-            ::jvs::JavaScript
+        :o:csl::console.log(){;}{Left 2} ; console.log(|);
+            :o:for(::for (let i = 0{;} i < arr.length; i{+}{+}) {{}`n{}
+                    ::jvs::JavaScript
 
-            ;================== YouTube download command ===================
-            ::ytdl::youtube-dl
+                    ;================== YouTube download command ===================
+                    ::ytdl::youtube-dl
 
-            ;===================================================
-            ;            MinActRun function
-            ;===================================================
-            MinActRun(title, exe) {
-                If WinActive(title)
-                    WinMinimize
-                Else If WinExist(title)
-                    WinActivate
-                Else
-                    Run, %exe%
-            }
+                    ;===================================================
+                    ;            MinActRun function
+                    ;===================================================
+                    MinActRun(title, exe) {
+                        If WinActive(title)
+                            WinMinimize
+                        Else If WinExist(title)
+                            WinActivate
+                        Else
+                            Run, %exe%
+                    }
 
