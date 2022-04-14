@@ -5,25 +5,39 @@
 ;========================================
 
 ;================== CapsLock ===================
-Capslock & P    Opens current or new instance of SMPlayer
+Capslock & E    Opens current or new instance of MS Edge
 Capslock & O    Opens current or new instance of Obsidian
+Capslock & P    Opens current or new instance of SMPlayer
 Capslock & V    Opens current or new instance of VS Code
 
 
 ;================== Ctrl key ===================
-Ctrl + F1   Hibernate Windows
+Ctrl + 2   Run ContextSensitiveHelp.ahk with selected word
+Ctrl + F1   Hibernate Windows, restart StartupPrograms.ahk after wakeup
+Ctrl + Left arrow key	Browser back.
+Ctrl + Right arrow key	Browser forward.
+Ctrl + Up Arrow	  Browser favorites.
+Ctrl + Down Arrow	Browser search.
 
 
 ;================== Alt key ===================
 Alt + shift + =   Make a primary title line for AHK code
-Alt + =   Make a secondary title line for AHK code
+Alt + =   Make a secondary title line for coding
 Alt + F4    (native) Close the active window
 Alt + tab   (native) Shows Task View popup
+Alt + Win + Left/right arrow   Move active window to next/previous Virtual Desktop and go there. Uses MoveToDesktop.exe
 
 
 ;============= Windows key =============
+
+;================== Assorted ===================
 Windows Key	  (native) Opens/closes the Start menu.
 Windows key + Tab	(native) Open Task View/Timeline.
+Windows key + Alt + Left/right arrow   Move active window to next/previous Virtual Desktop and go there. Uses MoveToDesktop.exe
+Windows key F1  ~ Displays Hotkey Help Results ~ Hotkey Help.ahk
+Windows key Alt F1  ~ Displays Hotkey Help Settings ~ Hotkey Help.ahk
+Windows key Ctrl F1  ~ Hotkey Help Excluded Files, Hotkeys, and Hotstrings ~ Hotkey Help.ahk
+Windows key Alt Ctrl F1  ~ Displays Hotkey Help Raw Hotkeys ~ Hotkey Help.ahk
 
 ;======================== Letters =============================
 Windows Key + A Toggles the active Window to be always on top.
@@ -36,7 +50,7 @@ Windows Key + N Opens current or new instance of Windows 10 Notepad
 Windows key + R	(native) Open Run command.
 Windows Key + S (or Windows Key + Q) (native) Opens Windows Search.
 Windows key + Shift + S	(native) Create part of the screen screenshot. Uses Windows 10 Snip & Sketch
-Windows key + W Cheat sheet for the Windows key hotkeys
+Windows key + W Cheat sheet for the Windows key native hotkeys
 Windows Key + X	(native) Opens the secondary (right click) start menu.
 
 ;======================== Arrow Keys =============================
@@ -51,6 +65,13 @@ Windows key + Shift + Left arrow key	Move active window to monitor on the left.
 Windows key + Shift + Right arrow key	Move active window to monitor on the right.
 Windows Key + Control + Left Arrow	Switches to the virtual desktop on the left.
 Windows Key + Control + Right Arrow	Switches to the virtual desktop on the right.
+
+                            (Mine)
+Ctrl + Left arrow key	Browser back.
+Ctrl + Right arrow key	Browser forward.
+Ctrl + Up Arrow	  Browser favorites.
+Ctrl + Down Arrow	Browser search.
+                            
 
 
 ;========================================
