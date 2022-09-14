@@ -56,134 +56,134 @@ Return
 ;===================================================
 
 ;================== Make a primary title line for AHK (Alt shift =) ===================
-!+=:: ; Make a primary title line for AHK
+~!+=:: ; Make a primary title line for AHK
     ; ("WinTitle and/or optional- ahk_exe ahk_class ahk_pid", , , )
-    if WinActive("Visual Studio Code ahk_exe Code.exe")
-        or if WinActive("Notepad")
-    Send, {;}==================================================={enter}{;}{enter}{;}==================================================={up 1}{space 12}
-        Return
+    if WinActive("Notepad")
+    Send, {;} ==================================================={enter}{;}{enter}{;} ==================================================={up 1}{space 12}
+        Return 
 
-        ;================== Make a secondary comment line for coding, Alt = ===================
-        !=:: ; Make a secondary comment line for code
-            if WinActive("Visual Studio Code ahk_exe Code.exe")
-                or if WinActive("Notepad")
-                Send, ^/
-            Send, =================={Space 2}==================={left 20}
-        Return
+        ;================== Make a secondary title line for coding, Alt = ===================
+        ~!=:: ; Make a secondary title line for code
+            if WinActive("Notepad")
+                ; Send, ^/
+            Send, {;} =================={Space 2}==================={left 20}
+                Return
 
-        ;==================================================
-        ;         Some hotkeys that use CapsLock
-        ;==================================================
+                ;==================================================
+                ;         Some hotkeys that use CapsLock
+                ;==================================================
 
-        ;================== Run/cycle MS Edge browser windows group, CapsLock e ===================
-        ; added 11:06AM Jan 07, 2022
-        CapsLock & e::
-            GroupAdd, EdgeGroup, Microsoft​ Edge ahk_exe msedge.exe
-            If WinActive("Microsoft​ Edge ahk_exe msedge.exe") {
-                GroupActivate, EdgeGroup, R
-                Sleep, 200
-                WinMinimize
-            } Else if WinExist("Microsoft​ Edge ahk_exe msedge.exe")
-            GroupActivate, EdgeGroup
-            Else
-                Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-        Return
+                ;================== Run/cycle MS Edge browser windows group, CapsLock e ===================
+                ; added 11:06AM Jan 07, 2022
+                CapsLock & e::
+                    GroupAdd, EdgeGroup, Microsoft​ Edge ahk_exe msedge.exe ; The U+200b char is nec.
+                    If WinActive("Microsoft​ Edge ahk_exe msedge.exe") { ; The U+200b char is nec.
+                        GroupActivate, EdgeGroup, R
+                        Sleep, 200
+                        WinMinimize
+                    } Else if WinExist("Microsoft​ Edge ahk_exe msedge.exe") ; The U+200b char is nec.
+                    GroupActivate, EdgeGroup
+                    Else
+                        Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+                Return
 
-        ;================== Run Obsidian, CapsLock o ===================
-        ; last edited 3:05PM 5/12/2021
-        CapsLock & o:: ; MinActRun Obsidian
-            MinActRun("brain - Obsidian ahk_exe Obsidian.exe", "C:\Users\dell\AppData\Local\Obsidian\Obsidian.exe")
-        Return
+                ;================== Run Obsidian, CapsLock o ===================
+                ; last edited 3:05PM 5/12/2021
+                CapsLock & o:: ; MinActRun Obsidian
+                    MinActRun("brain - Obsidian ahk_exe Obsidian.exe", "C:\Users\dell\AppData\Local\Obsidian\Obsidian.exe")
+                Return
 
-        ;================ Run SMPlayer, CapsLock p =================
-        ; last edited 8:33PM Nov 24, 2021
-        CapsLock & p:: ; MinActRun SMPlayer
-            MinActRun("SMPlayer ahk_exe smplayer.exe", "C:\Program Files\SMPlayer\smplayer.exe")
-        return
+                ;================ Run SMPlayer, CapsLock p =================
+                ; last edited 8:33PM Nov 24, 2021
+                CapsLock & p:: ; MinActRun SMPlayer
+                    MinActRun("SMPlayer ahk_exe smplayer.exe", "C:\Program Files\SMPlayer\smplayer.exe")
+                return
 
-        ;========== Run VS Code,  CapsLock v ===========
-        ; last edited 11:12AM 6/07/2021
-        CapsLock & v:: ; MinActRun VS Code
-            MinActRun("Visual Studio Code ahk_exe Code.exe", "C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\Code.exe")
-        Return
+                ;========== Run VS Code,  CapsLock v ===========
+                ; last edited 11:12AM 6/07/2021
+                CapsLock & v:: ; MinActRun VS Code
+                    MinActRun("Visual Studio Code ahk_exe Code.exe", "C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+                Return
 
-        ;==================================================
-        ;      Some hotkeys that use the Windows key
-        ;==================================================
+                ;==================================================
+                ;      Some hotkeys that use the Windows key
+                ;==================================================
 
-        ;================== Set active Window Always on Top, Windows key A ===================
-        #a:: ; Set active Window Always on Top, toggle
-            Winset, Alwaysontop, , A ; Toggles the active Window to be always on top
-        Return
+                ;================== Set active Window Always on Top, Windows key A ===================
+                #a:: ; Set active Window Always on Top, toggle
+                    Winset, Alwaysontop, , A ; Toggles the active Window to be always on top
+                Return
 
-        ;========== Run Windows 10 Calculator,  Windows key C ===========
-        #c:: ; MinActRun Windows 10 Calculator
-            MinActRun("Calculator", "calc.exe") ; Quote marks still necessary around the Windows native application file when in this function
-        Return
+                ;========== Run Windows 10 Calculator,  Windows key C ===========
+                #c:: ; MinActRun Windows 10 Calculator
+                    MinActRun("Calculator", "calc.exe") ; Quote marks still necessary around the Windows native application file when in this function
+                Return
 
-        ;========== Show desktop - toggle (native), Windows key D ===========
+                ;========== Show desktop - toggle (native), Windows key D ===========
 
-        ;========== Run File Explorer (modified from native), Windows key E ===========
-        #e:: ; MinActRun File Explorer
-            MinActRun("ahk_class CabinetWClass", "explorer.exe")
-        Return
+                ;========== Run File Explorer (modified from native), Windows key E ===========
+                #e:: ; MinActRun File Explorer
+                    MinActRun("ahk_class CabinetWClass", "explorer.exe")
+                Return
 
-        ;========== Run Windows 10 Notepad, Windows key N ===========
-        #n:: ; MinActRun Windows 10 Notepad
-            MinActRun("Notepad ahk_exe Notepad.exe", "notepad.exe")
-        Return
+                ;========== Run Windows 10 Notepad, Windows key N ===========
+                #n:: ; MinActRun Windows 10 Notepad
+                    MinActRun("Notepad ahk_exe Notepad.exe", "notepad.exe")
+                Return
 
-        ;================== Windows key cheat sheet toggle, Windows key W ===================
-        ; Add a "No #Warn" for this somehow
-        #w:: ; Windows key cheat sheet, toggle
-            Toggle := !Toggle
-            if Toggle {
-                Gui, Add, Picture, x0 y0 w%A_ScreenWidth% h%A_ScreenHeight% , %A_MyDocuments%\shortcutcheatsheet.png
-                Gui, Show, Maximize, Windows shortcut cheat sheet
-            } else if !Toggle {
-                Gui, hide
-            }
-        Return
-
-        ;================== Suspend all hotkeys, Windows key End ===================
-        ; #End:: Suspend ; Doesn't suspend all for some reason... only its own script
-
-        ;===================================================
-        ;                   Hotstrings
-        ;===================================================
-
-        ;================== Some AHK commands ===================
-        ::ws:: ; Run AHK Window Spy
-            MinActRun("Window Spy", "C:\Program Files\AutoHotkey\WindowSpy.ahk")
-        Return
-
-        ;================== Email addresses =================== 
-        ::ts1g::thesonseeker1@gmail.com
-        ::ts1p::thesonseeker1@protonmail.com
-
-        ;================== for Obsidian notes ===================
-        ::kan:: ; Obsidian - Makes a basic, projects type, kanban board
-            if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
-                Send, ---`rkanban-plugin: basic`r---`r{#}{#} Ideas 💡`r`r`r{#}{#} Todo ↘`r`r`r{#}{#} Doing 🛠`r`r`r{#}{#} Done 🛏`r`r`r**Complete**`r
-        Return
-
-        ;================== Some hotstrings for writing JavaScript ===================
-        :o:csl::console.log(){;}{Left 2} ; console.log(|);
-            :o:for(::for (let i = 0{;} i < arr.length; i{+}{+}) {{}`n{}
-                    ::jvs::JavaScript
-
-                    ;================== YouTube download command ===================
-                    ::ytdl::youtube-dl
-
-                    ;===================================================
-                    ;            MinActRun function
-                    ;===================================================
-                    MinActRun(title, exe) {
-                        If WinActive(title)
-                            WinMinimize
-                        Else If WinExist(title)
-                            WinActivate
-                        Else
-                            Run, %exe%
+                ;================== Windows key cheat sheet toggle, Windows key W ===================
+                ; Add a "No #Warn" for this somehow
+                #w:: ; Windows key cheat sheet, toggle
+                    Toggle := !Toggle
+                    if Toggle {
+                        Gui, Add, Picture, x0 y0 w%A_ScreenWidth% h%A_ScreenHeight% , %A_MyDocuments%\shortcutcheatsheet.png
+                        Gui, Show, Maximize, Windows shortcut cheat sheet
+                    } else if !Toggle {
+                        Gui, hide
                     }
+                Return
+
+                ;================== Suspend all hotkeys, Windows key End ===================
+                ; #End:: Suspend ; Doesn't suspend all for some reason... only its own script
+
+                ;===================================================
+                ;                   Hotstrings
+                ;===================================================
+
+                ;================== Some AHK commands ===================
+                ::ws:: ; Run AHK Window Spy
+                    MinActRun("Window Spy", "C:\Program Files\AutoHotkey\WindowSpy.ahk")
+                Return
+
+                ;================== Email addresses =================== 
+                ::ts1g::thesonseeker1@gmail.com
+                ::ts1p::thesonseeker1@protonmail.com
+
+                ;================== for Obsidian notes ===================
+                ::kan:: ; Obsidian - Makes a basic, projects type, kanban board
+                    if WinActive("brain - Obsidian ahk_exe Obsidian.exe")
+                        Send, ---`rkanban-plugin: basic`r---`r{#}{#} Ideas 💡`r`r`r{#}{#} Todo ↘`r`r`r{#}{#} Doing 🛠`r`r`r{#}{#} Done 🛏`r`r`r**Complete**`r
+                Return
+
+                ;================== Some hotstrings for writing JavaScript ===================
+                ; No longer necessary, native to VS Code, Emmet or extensions
+                ; :o:csl::console.log(){;}{Left 2} ; console.log(|);
+                ; :o:for(::for (let i = 0{;} i < arr.length; i{+}{+}) {{}`n{}
+
+                ::jvs::JavaScript
+
+                ;================== YouTube download command ===================
+                ::ytdl::youtube-dl
+
+                ;===================================================
+                ;            MinActRun function
+                ;===================================================
+                MinActRun(title, exe) {
+                    If WinActive(title)
+                        WinMinimize
+                    Else If WinExist(title)
+                        WinActivate
+                    Else
+                        Run, %exe%
+                }
 
