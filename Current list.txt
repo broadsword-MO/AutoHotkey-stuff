@@ -67,10 +67,10 @@ Windows Key + Control + Left Arrow	Switches to the virtual desktop on the left.
 Windows Key + Control + Right Arrow	Switches to the virtual desktop on the right.
 
                             (Mine)
-Ctrl + Left arrow key	Browser back.
-Ctrl + Right arrow key	Browser forward.
-Ctrl + Up Arrow	  Browser favorites.
-Ctrl + Down Arrow	Browser search.
+Ctrl + Alt + Left arrow key	Browser back.
+Ctrl + Alt + Right arrow key	Browser forward.
+Ctrl + Alt + Up Arrow	  Browser favorites.
+Ctrl + Alt + Down Arrow	Browser search.
                             
 
 
