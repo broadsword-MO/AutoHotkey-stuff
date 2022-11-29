@@ -42,14 +42,14 @@ SetCapslockState, AlwaysOff
 Return
 
 ;================== Browser Controls, Ctrl Alt (arrow) ===================
-; #IfWinActive, ahk_exe msedge.exe ; Exclusive to Edge browser, optional
-~^!Left::Browser_Back ; Browser_Back
-~^!Right::Browser_Forward ; Browser_Forward
-~^!Down::Browser_Search ; Browser_Search
-~^!Up:: ; = Browser_Favorites
-    Send, ^+o ; Send ctrl shift o, the shortcut for Edge favorites
-Return
-; #IfWinActive
+#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands)
+    ~^!Left::Browser_Back ; Browser_Back
+    ~^!Right::Browser_Forward ; Browser_Forward
+    ~^!Down::Browser_Search ; Browser_Search
+    ~^!Up:: ; = Browser_Favorites
+        Send, ^+o ; Send ctrl shift o, the shortcut for Edge favorites
+    Return
+#IfWinNotActive
 
 ;===================================================
 ;            Some hotkeys that use Alt
@@ -132,7 +132,7 @@ Return
 Return
 
 ;================== Windows key cheat sheet toggle, Windows key W ===================
-; Add a "No #Warn" for this somehow
+; Add a "No #Warn" for this somehow?
 #w:: ; Windows key cheat sheet, toggle
     Toggle := !Toggle
     if Toggle {
