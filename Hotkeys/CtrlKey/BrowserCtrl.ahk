@@ -6,11 +6,11 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 ~Pause::Pause ; Pause this script with the Pause key.
 
-#IfWinActive, ahk_exe msedge.exe ; Exclusive to Edge browser, optional
-    ~^!Left::Browser_Back
-    ~^!Right::Browser_Forward
-    ~^!Down::Browser_Search
+#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands)
+    ~^!Left::Browser_Back ; Browser_Back
+    ~^!Right::Browser_Forward ; Browser_Forward
+    ~^!Down::Browser_Search ; Browser_Search
     ~^!Up:: ; = Browser_Favorites
-        Send, ^+o
+        Send, ^+o ; Send ctrl shift o, the shortcut for Edge favorites
     Return
-#IfWinActive
+#IfWinNotActive
