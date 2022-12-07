@@ -6,7 +6,7 @@ SetTitleMatchMode, 2 ; 2 = Partial match of WinTitle
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 ; Activate NumLock completely
-SetNumlockState, AlwaysOn
+SetNumLockState, AlwaysOn
 
 ;===================================================
 ;            Set CapsLock as another modifier key
@@ -14,11 +14,22 @@ SetNumlockState, AlwaysOn
 ; Works good!! The CapsLock key can now be used as another Modifier Key!!!
 
 ; Deactivate CapsLock completely
-SetCapslockState, AlwaysOff
+SetCapsLockState, AlwaysOff
 
+; Double click (toggle) for CapsLock to be used as CapsLock
+~CapsLock:: ; added 1:34PM Dec 06, 2022
+    KeyWait, CapsLock
+    If (A_PriorHotkey=A_ThisHotkey && A_TimeSincePriorHotkey<400)
+        If GetKeyState("CapsLock","t") ; If CapsLock is toggled on
+            SetCapsLockState, AlwaysOff ; turn CapsLock back to AlwaysOff
+        Else
+            Send, {CapsLock}
+Return
+
+; Or, my previous setup
 ; Set the CapsLock key to only work as CapsLock when also pressed with Alt
-!CapsLock:: CapsLock ; Turn CapsLock on/off, toggle
-; IMPORTANT... Single-line hotkey remapping commands MUST use the same modifier key for it to work. Otherwise, use "Send," and "Return" on multiple lines.
+; !CapsLock:: CapsLock ; Turn CapsLock on/off, toggle
+; * NOTE IMPORTANT... Single-line hotkey remapping commands MUST use the same modifier key for it to work. Otherwise, use "Send," and "Return" on multiple lines.
 
 ; "Return" unnecessary at the end of this script. Each complete single line command has a "Return" at the end implicitly
 
@@ -42,7 +53,7 @@ SetCapslockState, AlwaysOff
 Return
 
 ;================== Browser Controls, Ctrl Alt (arrow) ===================
-#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands)
+#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands, unnecessary, preexisting native control)
     ~^!Left::Browser_Back ; Browser_Back
     ~^!Right::Browser_Forward ; Browser_Forward
     ~^!Down::Browser_Search ; Browser_Search
@@ -73,6 +84,12 @@ Return
 ;         Some hotkeys that use CapsLock
 ;==================================================
 
+;================== Run DevDocs.io, CapsLock d ===================
+; added 1:00PM Dec 03, 2022
+CapsLock & d:: ; MinActRun DevDocs.io
+MinActRun("DevDocs.io ahk_exe msedge.exe", "C:\Users\dell\AppData\Local\Microsoft\Edge\User Data\Default\Web Applications\_crx__ahiigpfcghkbjfcibpojancebdfjmoop\DevDocs.io.lnk")
+Return
+
 ;================== Run/cycle MS Edge browser windows group, CapsLock e ===================
 ; added 11:06AM Jan 07, 2022
 CapsLock & e::
@@ -87,6 +104,11 @@ Else
     Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Return
 
+; ================== Run AutoHotkey help, CapsLock h ===================
+CapsLock & h::
+MinActRun("AutoHotkey Help ahk_exe hh.exe", "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AutoHotkey\AutoHotkey Help File.lnk")
+Return
+
 ;================== Run Obsidian, CapsLock o ===================
 ; last edited 3:05PM 5/12/2021
 CapsLock & o:: ; MinActRun Obsidian
@@ -97,7 +119,7 @@ Return
 ; last edited 8:33PM Nov 24, 2021
 CapsLock & p:: ; MinActRun SMPlayer
 MinActRun("SMPlayer ahk_exe smplayer.exe", "C:\Program Files\SMPlayer\smplayer.exe")
-return
+Return
 
 ;========== Run VS Code,  CapsLock v ===========
 ; last edited 11:12AM 6/07/2021
