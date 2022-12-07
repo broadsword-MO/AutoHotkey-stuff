@@ -6,7 +6,7 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 ~Pause::Pause ; Pause this script with the Pause key.
 
-#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands)
+#IfWinNotActive, ahk_exe Code.exe ; Excludes VS Code (conflicting commands, unnecessary, preexisting native control)
     ~^!Left::Browser_Back ; Browser_Back
     ~^!Right::Browser_Forward ; Browser_Forward
     ~^!Down::Browser_Search ; Browser_Search
