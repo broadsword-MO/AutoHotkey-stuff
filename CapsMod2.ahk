@@ -26,9 +26,6 @@ SetCapsLockState, AlwaysOff
             Send, {CapsLock}
 Return
 
-; Or, my previous setup
-; Set the CapsLock key to only work as CapsLock when also pressed with Alt
-; !CapsLock:: CapsLock ; Turn CapsLock on/off, toggle
 ; * NOTE IMPORTANT... Single-line hotkey remapping commands MUST use the same modifier key for it to work. Otherwise, use "Send," and "Return" on multiple lines.
 
 ; "Return" unnecessary at the end of this script. Each complete single line command has a "Return" at the end implicitly
@@ -84,15 +81,9 @@ Return
 ;         Some hotkeys that use CapsLock
 ;==================================================
 
-;================== Run DevDocs.io, CapsLock d ===================
-; added 1:00PM Dec 03, 2022
-CapsLock & d:: ; MinActRun DevDocs.io
-MinActRun("DevDocs.io ahk_exe msedge.exe", "C:\Users\dell\AppData\Local\Microsoft\Edge\User Data\Default\Web Applications\_crx__ahiigpfcghkbjfcibpojancebdfjmoop\DevDocs.io.lnk")
-Return
-
-;================== Run/cycle MS Edge browser windows group, CapsLock e ===================
+;================== Run/cycle MS Edge Browser windows group, CapsLock b ===================
 ; added 11:06AM Jan 07, 2022
-CapsLock & e::
+CapsLock & b::
 GroupAdd, EdgeGroup, Microsoft​ Edge ahk_exe msedge.exe ; The U+200b char is nec.
 If WinActive("Microsoft​ Edge ahk_exe msedge.exe") { ; The U+200b char is nec.
     GroupActivate, EdgeGroup, R
@@ -102,6 +93,18 @@ If WinActive("Microsoft​ Edge ahk_exe msedge.exe") { ; The U+200b char is nec.
     GroupActivate, EdgeGroup
 Else
     Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+Return
+
+;================== Run DevDocs.io, CapsLock d ===================
+; added 1:00PM Dec 03, 2022
+CapsLock & d:: ; MinActRun DevDocs.io
+MinActRun("DevDocs.io ahk_exe msedge.exe", "C:\Users\dell\AppData\Local\Microsoft\Edge\User Data\Default\Web Applications\_crx__ahiigpfcghkbjfcibpojancebdfjmoop\DevDocs.io.lnk")
+Return
+
+;================== Run Everything search, CapsLock e ===================
+; added 1:00PM Dec 03, 2022
+CapsLock & e:: ; MinActRun Everything
+MinActRun("Everything ahk_exe Everything.exe", "C:\Program Files\Everything\Everything.exe")
 Return
 
 ; ================== Run AutoHotkey help, CapsLock h ===================
@@ -133,7 +136,7 @@ Return
 
 ;================== Set active Window Always on Top, Windows key A ===================
 #a:: ; Set active Window Always on Top, toggle
-    Winset, Alwaysontop, , A ; Toggles the active Window to be always on top
+    WinSet, AlwaysOnTop, , A ; Toggles the active Window to be always on top
 Return
 
 ;========== Run Windows 10 Calculator,  Windows key C ===========
