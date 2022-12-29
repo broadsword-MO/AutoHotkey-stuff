@@ -7,7 +7,7 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 ~Pause::Pause
 
-;Watch the YouTube video in the following link for guidance:
+; LINK -  Watch the YouTube video in the following link for guidance:
 ;ENG: https://youtu.be/5-wp9crAnNM
 ;KOR: https://youtu.be/UBGyaXh3gGY
 

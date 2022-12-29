@@ -5,7 +5,7 @@ SetWorkingDir, %A_ScriptDir%
 ; From Juho-Lee.com
 ; Single Line tooltip to launch programs
 
-;Watch the YouTube video in the following link for guidance:
+; LINK Watch the YouTube video in the following link for guidance:
 ;ENG: https://youtu.be/_0hQENoxkxs
 ;KOR: https://youtu.be/OkpL8ojfbOE
 

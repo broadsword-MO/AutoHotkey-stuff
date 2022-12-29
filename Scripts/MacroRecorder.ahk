@@ -16,7 +16,7 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 ;  F5  -->  Edit   LogFile
 ;  F6  -->  Pause  Record/Play
 ;
-;  Note:
+;  * NOTE:
 ;  1. press the Ctrl button individually
 ;     to record the movement of the mouse.
 ;  2. Shake the mouse on the Pause button,

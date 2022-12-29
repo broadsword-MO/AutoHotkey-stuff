@@ -7,12 +7,12 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 ~Pause::Pause
 
-;Watch the YouTube video in the following link for guidance:
+; LINK Watch the YouTube video in the following link for guidance:
 ;ENG: https://youtu.be/SOvyZPUc1gE
 ;KOR: https://youtu.be/7qBfQOXCYi8
 
 ;single alt press hotkey
-~Alt:: ; NOTE - it's not !:: because that means you press shift + 1 (i.e. exclamation mark !) to launch the hotkey
+~Alt:: ; * NOTE - it's not !:: because that means you press shift + 1 (i.e. exclamation mark !) to launch the hotkey
 	Run, Chrome.exe
 return
 

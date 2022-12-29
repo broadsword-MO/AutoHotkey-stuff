@@ -11,7 +11,7 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 ;==========================================
 ; added 9:15PM Dec 23, 2021
 ; last edited 11:03AM Jan 07, 2022
-; Note invisible character U+200b after the "t" in Microsoft​ is necessary
+; * NOTE invisible character U+200b after the "t" in Microsoft​ is necessary
         CapsLock & e::
             GroupAdd, EdgeGroup, Microsoft​ Edge ahk_exe msedge.exe
             If WinActive("Microsoft​ Edge ahk_exe msedge.exe") {

@@ -14,7 +14,7 @@ SetCapslockState, AlwaysOff
 ;; remap capslock to hyper
 ;; if capslock is toggled, remap it to esc
 
-;; note: must use tilde prefix to fire hotkey once it is pressed,
+;; * NOTE: must use tilde prefix to fire hotkey once it is pressed,
 ;; not until the hotkey is released
 ~Capslock::
     ;; must use downtemp to emulate hyper key, you cannot use down in this case 

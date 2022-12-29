@@ -1,7 +1,7 @@
 ;SendMode Input
 ;SetWorkingDir, %A_ScriptDir%
 
-;Watch the YouTube video in the following link for gudiance:
+; LINK Watch the YouTube video in the following link for gudiance:
 ;ENG: https://youtu.be/kCmaH9fX3ZA
 ;KOR: https://youtu.be/dTE_CrCFK9Q
 

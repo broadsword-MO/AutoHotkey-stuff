@@ -1,4 +1,4 @@
-;Watch the YouTube video in the following link for guidance:
+; LINK Watch the YouTube video in the following link for guidance:
 ;ENG: https://youtu.be/7JsrCTViXBI
 ;KOR: https://youtu.be/50FZYI1qx_k
 
