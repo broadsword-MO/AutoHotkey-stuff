@@ -3,6 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; * NOTE This doesn't work well because of Windows 10 online office uses the ctrl, shift, alt, win keys combo
 
 #UseHook
 #InstallKeybdHook
